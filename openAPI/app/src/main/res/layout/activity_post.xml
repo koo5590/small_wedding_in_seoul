@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:padding="0dp"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="23dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            android:layout_marginLeft="20dp"
+            android:text="@string/back"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="0dp"
+            android:layout_toLeftOf="@+id/delete"
+            android:layout_toStartOf="@+id/delete"
+            app:fontFamily="@font/seoulhangangfont"
+            android:fontFamily="@font/seoulhangangfont"
+            android:visibility="gone"
+            android:text="수정"/>
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="0dp"
+            android:layout_toLeftOf="@+id/mypageB"
+            android:layout_toStartOf="@+id/mypageB"
+            app:fontFamily="@font/seoulhangangfont"
+            android:fontFamily="@font/seoulhangangfont"
+            android:visibility="gone"
+            android:text="삭제"/>
+
+        <Button
+            android:id="@+id/mypageB"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="0dp"
+            app:fontFamily="@font/seoulhangangfont"
+            android:fontFamily="@font/seoulhangangfont"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/myPage"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_gravity="center"
+        android:id="@+id/placeName"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:textSize="18sp"
+        app:fontFamily="@font/seoulhangangfont"
+        android:fontFamily="@font/seoulhangangfont"
+        android:text=""/>
+
+    <LinearLayout
+        android:id="@+id/reviewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/name_bg"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/reviewDate"
+            android:text="@string/writer"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:textColor="@color/mainPink"
+            android:textSize="18sp"
+            app:fontFamily="@font/seoulhangangfont"
+            android:fontFamily="@font/seoulhangangfont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/nickname"
+            android:text="@string/date"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/mainPink"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            app:fontFamily="@font/seoulhangangfont"
+            android:fontFamily="@font/seoulhangangfont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <TextView
+        android:background="@drawable/name_bg"
+        android:id="@+id/reviewContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="16"
+        android:textSize="20sp"
+        app:fontFamily="@font/seoulhangangfont"
+        android:fontFamily="@font/seoulhangangfont"
+        android:padding="20dp"/>
+
+</LinearLayout>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/wedding"
+                android:layout_gravity="center"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/seoulhangangfont"
+                android:textSize="18sp"
+                app:fontFamily="@font/seoulhangangfont" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/search_text"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:maxLines="1"
+                android:hint="@string/hint"
+                android:fontFamily="@font/seoulhangangfont"
+                app:fontFamily="@font/seoulhangangfont"
+                android:inputType="textPersonName"
+                android:layout_weight="6"/>
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/search_button"
+                android:onClick="searchButtonClicked"
+                android:text="@string/search"
+                android:textSize="14sp"
+                app:fontFamily="@font/seoulhangangfont"/>
+
+            <Button
+                android:id="@+id/filter_button"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="40dp"
+                android:onClick="onSlideViewButtonClick"
+                android:background="@drawable/search_button"
+                android:layout_marginLeft="10dp"
+                android:textSize="14sp"
+                app:fontFamily="@font/seoulhangangfont"
+                android:text="@string/filter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <GridView
+                android:id="@+id/item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="2"
+                android:verticalSpacing="10dp"
+                android:horizontalSpacing="15dp"
+                android:stretchMode="columnWidth">
+            </GridView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--input main activity here-->
+
+
+    <!--filter screen-->
+    <LinearLayout
+        android:id="@+id/filter_screen"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@color/lightPink"
+        android:padding="20dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <!--close button-->
+            <Button
+                android:id="@+id/close_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_button"
+                android:text="@string/close_filter"
+                android:onClick="onSlideViewButtonClick"
+                app:fontFamily="@font/seoulhangangfont"
+                android:textColor="#000000"/>
+
+            <!--apply filter button-->
+            <Button
+                android:id="@+id/valid_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_button"
+                android:onClick="validateFilter"
+                app:fontFamily="@font/seoulhangangfont"
+                android:layout_marginLeft="10dp"
+                android:text="@string/valid_filter" />
+        </LinearLayout>
+
+        <!--spinner for gu-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gu"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                app:fontFamily="@font/seoulhangangfont" />
+            <Spinner
+                android:id="@+id/gu"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                app:fontFamily="@font/seoulhangangfont"
+                android:entries="@array/gu"></Spinner>
+        </LinearLayout>
+
+
+        <!--cost selection-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/cost"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            app:fontFamily="@font/seoulhangangfont" />
+        <RadioGroup
+            android:id="@+id/costG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/cost1"
+                android:layout_marginTop="8sp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/whole"
+                android:textColor="#000000"
+                app:fontFamily="@font/seoulhangangfont" />
+            <RadioButton
+                android:id="@+id/cost2"
+                android:layout_marginTop="8sp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:fontFamily="@font/seoulhangangfont"
+                android:text="@string/free"/>
+
+            <RadioButton
+                android:id="@+id/cost3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lessthan10"
+                app:fontFamily="@font/seoulhangangfont" />
+            <RadioButton
+                android:id="@+id/cost4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/seoulhangangfont"
+                android:text="@string/lessthan30"/>
+        </RadioGroup>
+
+
+        <!--parking cost selection-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/parking"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            app:fontFamily="@font/seoulhangangfont" />
+        <RadioGroup
+            android:id="@+id/parkingG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/parking1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/seoulhangangfont"
+                android:text="@string/whole"/>
+            <RadioButton
+                android:id="@+id/parking2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="@font/seoulhangangfont"
+                android:text="@string/free"/>
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

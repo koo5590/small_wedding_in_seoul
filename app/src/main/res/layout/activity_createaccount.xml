@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_marginTop="150dp"
+        android:layout_gravity="center"
+        android:id="@+id/createFields"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:layout_gravity="center"
+            android:id="@+id/newUserEmail"
+            android:hint="@string/idText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_gravity="center"
+            android:id="@+id/newnickname"
+            android:hint="@string/nicknameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_gravity="center"
+            android:id="@+id/newUserpassword"
+            android:hint="@string/newpasswordText"
+            android:inputType="textPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_gravity="center"
+            android:id="@+id/pwCheck"
+            android:hint="@string/passwordCheckText"
+            android:inputType="textPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:id="@+id/createNewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/createB"/>
+    </LinearLayout>
+
+</LinearLayout>
